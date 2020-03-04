@@ -31,7 +31,7 @@ data_test = [
 #------------------------------------------ Routes ---------------------------------# 
 # input route for model 
 @app.route('/api/hto/arb/', methods=['GET', 'POST'])
-def api_by_id(): 
+def api_serve_model(): 
     if request.method == 'POST':
        req_data = request.get_json()      
        return req_data['hello']
