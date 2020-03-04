@@ -28,7 +28,14 @@ data_test = [
      }
 ]
 
-#------------------------------------------ Routes ---------------------------------
+#------------------------------------------ Routes ---------------------------------# 
+# input route for model 
+@app.route('/api/hto/arb/', methods=['GET', 'POST'])
+def api_by_id(): 
+    if request.method == 'POST':
+       req_data = request.get_json()      
+       return req_data['hello']
+   
 #home page of the application 
 @app.route('/', methods=['GET'])
 def home():
@@ -44,22 +51,4 @@ def page_not_found(e):
 def api_all():
     return jsonify(data_test)
 
-#allow user to use input and post to the application 
-@app.route('/api/hto/arb/', methods=['GET', 'POST'])
-def api_by_id(): 
-    if 'id' in request.args:
-        id = int(request.args['id'])
-    else:
-        return "Error: No id field provided. Please specify an id."
-    
-    # create an empty list for results
-    results = []
-    
-    for book in books: 
-        if book['id'] == id: 
-            results.append(book)
-    
-    return jsonify(results)
- 
-                    
 app.run()
