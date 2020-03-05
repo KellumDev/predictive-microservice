@@ -67,8 +67,8 @@ def run_init(unknown): #file path to excel
     
     return prediction_json 
 
-result = run_init(data_test)
-print(result)
+#result = run_init(data_test)
+#print(result)
 
 
 

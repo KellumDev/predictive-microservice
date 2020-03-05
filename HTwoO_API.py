@@ -8,7 +8,7 @@ Created on Thu Feb 27 11:31:03 2020
 import flask
 from flask import request , jsonify
 
-import modeltest
+import run_h2o as h2o_init
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -33,8 +33,9 @@ data_test = [
 @app.route('/api/hto/arb/', methods=['GET', 'POST'])
 def api_serve_model(): 
     if request.method == 'POST':
-       req_data = request.get_json()      
-       return req_data['hello']
+        req_data = request.get_json() 
+      #  result = h2o_init.run_init(req_data)
+        return result
    
 #home page of the application 
 @app.route('/', methods=['GET'])
