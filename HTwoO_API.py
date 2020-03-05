@@ -34,7 +34,7 @@ data_test = [
 def api_serve_model(): 
     if request.method == 'POST':
         req_data = request.get_json() 
-      #  result = h2o_init.run_init(req_data)
+        result = h2o_init.run_init(req_data)
         return result
    
 #home page of the application 

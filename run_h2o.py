@@ -16,32 +16,10 @@ import json
  
 h2o.init()
 
-rf = h2o.load_model(path="C:/Users/austin.kellum/Documents/Python_webservice/predictions/DRF_model_python_1583350791193_1")
+rf = h2o.load_model(path="C:/Users/austin.kellum/Documents/Python_webservice/predictions/drf_model_v3")
 
-data_test = [
-    {'fixed_acidity': 0,
-     'volatile_acidity': 0,
-     'citric_acidity': 0,
-     'residual_sugar': 0,
-     'chlorides': 0,
-     'free_sulfur_dioxide': 0,
-     'total_sulfur_dioxide': 0,
-     'density': 0,
-     'pH': 0,
-     'sulphates': 0,
-     'alcohol': 0
-     }
-]
-
-'''
-  quasAnswer = inst.getQuery(quesAsked)
-            #formatAns = {"fulfillmentText": "This is a text response", 'fulfillmentMessages': [{'text': {'text': [quasAnswer]}}]}
-            formatAns = {"fulfillmentText":quasAnswer}
-
-
-
-'''
-#unknown = ""C:\Users\austin.kellum\Documents\Python_webservice\wine_test_data.csv""
+ 
+ 
 def run_init(unknown): #file path to excel
     #h2o.init
     
@@ -60,10 +38,7 @@ def run_init(unknown): #file path to excel
     
     
     print("..done")
-    #prediction=pd.DataFrame(prediction)
-    #formatAns = {"prediction": prediction}
-     #prediction = json.dumps(formatAns)
-        
+  
     
     return prediction_json 
 
@@ -71,11 +46,4 @@ def run_init(unknown): #file path to excel
 #print(result)
 
 
-
-#------------------------------- Need later -----------------------------------
-     # prediction.to_json(orient='split')
-    #formatAns = {"prediction": prediction}
-#    prediction = unknown['prediction']= prediction['predict quality']
-   # prediction.to_json(orient='split')
-#------------------------------- Need later -----------------------------------
  
