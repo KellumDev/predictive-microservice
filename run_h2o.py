@@ -32,7 +32,7 @@ def run_init(unknown): #file path to excel
     prediction = prediction.as_data_frame(use_pandas=True)
     prediction = prediction['predict']
     prediction = prediction.to_list()
-    pred_dict = {'prediction': prediction}
+    pred_dict = {'wine_quality_prediction': prediction}
     prediction_json= json.dumps(pred_dict)
     #jsonify
     
