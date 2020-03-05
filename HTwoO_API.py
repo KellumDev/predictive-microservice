@@ -15,16 +15,16 @@ app.config["DEBUG"] = True
 
 data_test = [
     {'fixed_acidity': 0,
-     'volatile_acidity': 'A Fire Upon the Deep',
-     'citric_acidity': 'Vernor Vinge',
-     'residual_sugar': 'The coldsleep itself was dreamless.',
-     'chlorides': 'The coldsleep itself was dreamless.',
-     'free_sulfur_dioxide': 'The coldsleep itself was dreamless.',
-     'total_sulfur_dioxide': 'The coldsleep itself was dreamless.',
-     'density': 'The coldsleep itself was dreamless.',
-     'pH': 'The coldsleep itself was dreamless.',
-     'sulphates': 'The coldsleep itself was dreamless.',
-     'alcohol': 'The coldsleep itself was dreamless.'
+     'volatile_acidity': 0,
+     'citric_acidity': 0,
+     'residual_sugar': 0,
+     'chlorides': 0,
+     'free_sulfur_dioxide': 0,
+     'total_sulfur_dioxide': 0,
+     'density': 0,
+     'pH': 0,
+     'sulphates': 0,
+     'alcohol': 0
      }
 ]
 
@@ -46,9 +46,5 @@ def home():
 def page_not_found(e):
     return "<h1>404</h1><p>Check again, the resource could not be found.</p>", 404
 
-# A route to return all of the available entries in our catalog.
-@app.route('/api/v1/resources/books/all', methods=['GET'])
-def api_all():
-    return jsonify(data_test)
 
 app.run()
