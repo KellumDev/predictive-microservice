@@ -27,16 +27,15 @@ def run_init(unknown): #file path to excel
     normalized = json_normalize(unknown)
     
     normalized = h2o.H2OFrame(normalized)
-    
     prediction = rf.predict(normalized)
-    prediction = prediction.as_data_frame(use_pandas=True)
-    prediction = prediction['predict']
-    prediction = prediction.to_list()
-    pred_dict = {'wine_quality_prediction': prediction}
+    prediction_pd = prediction.as_data_frame(use_pandas=True)
+    prediction_pd = prediction_pd['predict']
+    prediction_pd = prediction_pd.to_list()
+    pred_dict = {'wine_quality_prediction': prediction_pd}
     prediction_json= json.dumps(pred_dict)
-    #jsonify
     
-    
+    #remove the normalized frame 
+    # remove the prediction 
     print("..done")
   
     
