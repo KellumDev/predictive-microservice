@@ -40,7 +40,9 @@ def api_serve_model():
 #home page of the application 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Mantis</h1><p>This site is a prototype API for Mantis.</p>"
+    result = h2o_init.run_init(req_data)
+    return result
+    #return "<h1>Mantis</h1><p>This site is a prototype API for Mantis.</p>"
 
 #error handling the application
 @app.errorhandler(404)
